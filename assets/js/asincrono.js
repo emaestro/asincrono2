@@ -6,7 +6,12 @@ $(
 		 *	Implementamos el evento Click de la opción de Menú Nuevo
 		 **************************************************************************************************/
 		$("#a-nuevo").on("click", function(){
-			$("#divPrincipal").load("nuevo.php");
+			$("#divPrincipal").load("nuevo.php", function (e) {
+				$("#btnGuardarNuevo").on("click", function (e) {
+					alert("Guardar Nuevo Usuario");
+					e.preventDefault();
+				})
+			});
 		});
 
 		/**************************************************************************************************
