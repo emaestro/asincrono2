@@ -7,10 +7,31 @@ $(
 		 **************************************************************************************************/
 		$("#a-nuevo").on("click", function(){
 			$("#divPrincipal").load("nuevo.php", function (e) {
+
+
+				$("#fregistro").on('submit', function (e) {
+
+					$.ajax(
+						{
+							type: 'post',
+							url: 'nuevo.guarda.php',
+							data: $(this).serialize(),
+							dataType: 'text',
+							success: function(response){
+								alert(response);
+							}
+						}                           
+					);					
+
+					e.preventDefault();
+				});
+
+				/*
 				$("#btnGuardarNuevo").on("click", function (e) {
 					alert("Guardar Nuevo Usuario");
 					e.preventDefault();
 				})
+				*/
 			});
 		});
 
