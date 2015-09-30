@@ -13,7 +13,7 @@
 			.	"usuario = '{$_POST['txt-usuario']}', "
 			.	"clave = '{$_POST['txt-clave']}' ";
 	$oResponse = array();
-	if (mysqli($sSQL))
+	if ($oResultado = mysqli($sSQL))
 	{
 		$oResponse['success'] = TRUE;
 	}

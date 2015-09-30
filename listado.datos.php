@@ -8,11 +8,17 @@
 	$tmpUsuarios = array();
 	if ($oUsuarios = mysqli($sSQL)) {
 		$oResponse['success'] = TRUE;
+		$ultimo = 0;
 		while ($aUsuario = $oUsuarios->fetch_assoc())
 		{
 			$tmpUsuarios[] = $aUsuario;
+			if ($ultimo < $aUsuario['usuario_id'])
+			{
+				$ultimo = $aUsuario['usuario_id'];
+			}
 		}
 		$oResponse['data'] = $tmpUsuarios;
+		$oResponse['ultimo'] = $ultimo;
 	}
 	else
 	{

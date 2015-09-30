@@ -80,7 +80,7 @@ $(
 
 					
 					$.each(response.data, function(id, fila){
-						var row = $('<tr></tr>');
+						var row = $('<tr></tr>').attr("id", "tr"+fila.usuario_id);
 						var data = $('<td></td>').text(fila.paterno);
 						table.append(row);
 						row.append(data);
@@ -103,6 +103,7 @@ $(
 					});
 
 					$('#divPrincipal').append(table);
+					$( "#tr"+response.ultimo).fadeTo(1000, 0.1).fadeTo(1000, 1.0);
 				});
 
 			});
