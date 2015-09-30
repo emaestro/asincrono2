@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-8">
-		<div class="alert alert-info">
-			<h1>Listado</h1>
+		<h1>Listado de Usuarios</h1>
+		<div id="divPrincipal">
 		</div>
 	</div>
 	<div class="col-md-4">
