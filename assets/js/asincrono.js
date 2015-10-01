@@ -1,6 +1,13 @@
+		function eliminar(id)
+		{
+			alert("Eliminar usuario " + id);
+		}
+
 
 $(
 	function () {
+
+
 
 		/**************************************************************************************************
 		 *	Implementamos el evento Click de la opción de Menú Nuevo
@@ -78,6 +85,10 @@ $(
 					table.append(row);
 					row.append(data);
 
+					data = $('<th></th>').text("");
+					table.append(row);
+					row.append(data);
+
 					
 					$.each(response.data, function(id, fila){
 						var row = $('<tr></tr>').attr("id", "tr"+fila.usuario_id);
@@ -100,14 +111,25 @@ $(
 						data = $('<td></td>').text(fila.clave);
 						table.append(row);
 						row.append(data);
+
+										
+						
+						//operacion_editar = $("<a>a</a>").attr("id", "a_" + fila.usuario_id);
+						data = $("<td><a href='javascript:void(0);' onclick='eliminar("+fila.usuario_id+")'><span class='glyphicon glyphicon-remove'></span></a> </td>");
+						table.append(row);
+						row.append(data);
+
 					});
 
 					$('#divPrincipal').append(table);
 					$( "#tr"+response.ultimo).fadeTo(1000, 0.1).fadeTo(1000, 1.0);
 				});
-
+				
 			});
 		});
+
+
+
 		/**************************************************************************************************
 		 *	Implementamos el evento Click de la opción de Menú Listado
 		 **************************************************************************************************/
