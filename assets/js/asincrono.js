@@ -1,8 +1,50 @@
-		function eliminar(id)
+function eliminar(id)
+{
+	$.ajax(
 		{
-			alert("Eliminar usuario " + id);
-		}
+			type: 'post',
+			url: 'eliminar.php',
+			data: {id:id},
+			dataType: 'json',
+			success: function(response){
+				if (response.success) 
+				{
+					$("#a-listado").click();
+				}
+				else
+				{
+					alert("Error al insertar Nuevo Usuario");
+				}
+			}
+		}                           
+	);					
+}
 
+
+function modificar(id)
+{
+	$("#divPrincipal").load("modificar.formulario.php", function () {
+		$.ajax(
+			{
+				type: 'post',
+				url: 'modificar.datos.php',
+				data: {id:id},
+				dataType: 'json',
+				success: function(response){
+					if (response.success) 
+					{
+						$("#txt-paterno").val(response.data.paterno);
+					}
+					else
+					{
+						alert("Error al insertar Nuevo Usuario");
+					}
+				}
+			}                           
+		);					
+
+	});
+}
 
 $(
 	function () {
@@ -112,10 +154,7 @@ $(
 						table.append(row);
 						row.append(data);
 
-										
-						
-						//operacion_editar = $("<a>a</a>").attr("id", "a_" + fila.usuario_id);
-						data = $("<td><a href='javascript:void(0);' onclick='eliminar("+fila.usuario_id+")'><span class='glyphicon glyphicon-remove'></span></a> </td>");
+						data = $("<td><a href='javascript:void(0);' onclick='modificar("+fila.usuario_id+")'><span class='glyphicon glyphicon-edit'></span></a> <a href='javascript:void(0);' onclick='eliminar("+fila.usuario_id+")'><span class='glyphicon glyphicon-remove'></span></a> </td>");
 						table.append(row);
 						row.append(data);
 
