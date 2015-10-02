@@ -4,7 +4,7 @@
 
 		<form class="form-horizontal" name='fregistro' id='fregistro' role='form'>
 
-			<input type="hidden" class="form-control" id="txt-id" name="txt-id">
+			<input type="hidden" id="txt-id" name="txt-id">
 	
 			<div class="form-group">
 				<label for="txt-paterno" class="col-sm-3 control-label">Paterno :</label>

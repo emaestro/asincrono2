@@ -33,7 +33,7 @@ function modificar(id)
 				success: function(response){
 					if (response.success) 
 					{
-						$("#txt-id").val(response.data.persona_id);
+						$("#txt-id").val(response.data.usuario_id);
 						$("#txt-paterno").val(response.data.paterno);
 						$("#txt-materno").val(response.data.materno);
 						$("#txt-nombres").val(response.data.nombres);
