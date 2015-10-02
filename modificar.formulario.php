@@ -1,9 +1,11 @@
 <div class="row">
 	<div class="col-md-8">
-		<h1>Nuevo Usuario</h1>
+		<h1>Modificar Usuario</h1>
 
 		<form class="form-horizontal" name='fregistro' id='fregistro' role='form'>
 
+			<input type="hidden" class="form-control" id="txt-id" name="txt-id">
+	
 			<div class="form-group">
 				<label for="txt-paterno" class="col-sm-3 control-label">Paterno :</label>
 				<div class="col-sm-3">
@@ -48,7 +50,7 @@
 
 			<div class="form-group">
 				<div class="col-sm-offset-3 col-sm-6 ">
-					<button type="submit" class="btn btn-primary" id="btnGuardarNuevo">Guardar Nuevo Usuario</button>
+					<button type="submit" class="btn btn-primary" id="btnGuardarNuevo">Guardar cambios</button>
 				</div>
 			</div>
 
