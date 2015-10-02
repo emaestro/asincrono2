@@ -37,6 +37,7 @@ function modificar(id)
 						$("#txt-paterno").val(response.data.paterno);
 						$("#txt-materno").val(response.data.materno);
 						$("#txt-nombres").val(response.data.nombres);
+						$("#txt-usuario").val(response.data.usuario);
 						$("#txt-clave").val(response.data.clave);
 						$("#txt-clave-2").val(response.data.clave);
 					}
@@ -46,7 +47,30 @@ function modificar(id)
 					}
 				}
 			}                           
-		);					
+		);
+		$("#fmodificar").on('submit', function (e) {
+
+			$.ajax(
+				{
+					type: 'post',
+					url: 'modificar.guarda.php',
+					data: $(this).serialize(),
+					dataType: 'json',
+					success: function(response){
+						if (response.success) 
+						{
+							$("#a-listado").click();
+						}
+						else
+						{
+							alert("Error al insertar Nuevo Usuario");
+						}
+					}
+				}                           
+			);					
+
+			e.preventDefault();
+		});
 
 	});
 }

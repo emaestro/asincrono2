@@ -2,7 +2,7 @@
 	<div class="col-md-8">
 		<h1>Modificar Usuario</h1>
 
-		<form class="form-horizontal" name='fregistro' id='fregistro' role='form'>
+		<form class="form-horizontal" name='fmodificar' id='fmodificar' role='form'>
 
 			<input type="hidden" id="txt-id" name="txt-id">
 	
